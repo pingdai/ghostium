@@ -1,6 +1,36 @@
 {{!< default}}
 
-<article class="archives"></article>
+<div class="row page pages">
+    <div class="slidenav">
+        {{> aside}}
+        <div class="closeslide"></div>
+    </div>
+    <main>
+        <nav>
+            <header class="nav-wrapper blue-grey">
+                <div>
+                    <a id="show-slide-nav"><i class="fa fa-bars fa-lg"></i></a>
+                    <p>
+                        <span class="header-title">{{@blog.title}}</span>
+                    </p>
+                    <span></span>
+                </div>
+            </header>
+        </nav>
+        <div class="contents content-in about">
+            {{#post}}
+            <article>
+                <div style="text-align:center"><h4 class="archives-title">Archives</h4></div>
+                <article class="archives"></article>
+            </article>
+            <div class="noborderfooter" style="margin-top:50px;">
+                {{> footer}}
+            </div>
+        </div>
+
+    </main>
+</div>
+{{/post}}
 
 <script src="//cdn.bootcss.com/jquery/3.1.0/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/moment.js/2.14.1/moment.min.js"></script>
@@ -12,6 +42,7 @@
 
 /*
 *	From https://github.com/flute/ghost-archives
+	<article class="archives"></article>
 */
 jQuery(document).ready(function() {
 	//获取所有文章数据，按照发表时间排列
