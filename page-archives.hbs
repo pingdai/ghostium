@@ -6,26 +6,12 @@
 {{! Everything inside the #post tags pulls data from the page }}
 {{#post}}
 
-{{!-- <header class="main-header">
-    <nav class="container main-nav clearfix">
-        <div class="main-nav__brand">
-            <a class="blog-title" href="{{@blog.url}}">{{@blog.title}}</a>
-        </div>
-        {{#if @blog.navigation}}
-            {{navigation}}
-        {{/if}}
-    </nav>
-</header> --}}
-
 {{! The main container area on the homepage }}
 <div class="row page pages">
     <nav>
         <header class="nav-wrapper blue-grey">
             <div>
                 <a id="show-slide-nav"><i class="fa fa-bars fa-lg"></i></a>
-                <p>
-                    <span class="header-title">{{@blog.title}}</span>
-                </p>
                 <span></span>
             </div>
         </header>
@@ -68,7 +54,7 @@ jQuery(document).ready(function() {
                     var html = "<li><time>" + date + "日</time><a href='" + url + "'>" + title + "</a></li>";
                     $(html).appendTo(".archives .list-" + year + "-" + month)
                 } else {
-                    var html = "<div class='item'><h3><i class='fa fa-calendar fa-fw' aria-hidden='true'></i> " + year + "-" + month + "</h3><ul class='archives-list list-" + year + "-" + month + "'><li><time>" + date + "日</time><a href='" + url + "'>" + title + "</a></li></ul></div>";
+                    var html = "<span style='white-space:pre;'>" + "    "+ "</span>" + "<div class='item'><h3><i class='fa fa-calendar fa-fw' aria-hidden='true'></i> " + year + "-" + month + "</h3><ul class='archives-list list-" + year + "-" + month + "'><li><time>" + date + "日</time><a href='" + url + "'>" + title + "</a></li></ul></div>";
                     $(html).appendTo('.archives')
                 }
             } else {
