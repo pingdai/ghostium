@@ -19,6 +19,10 @@
 
 {{! The main container area on the homepage }}
 <main id="container" class="container" role="main">
+    <div class="slidenav">
+        {{> aside}}
+        <div class="closeslide"></div>
+    </div>
     <div id="content" class="content col-sm-12 col-md-12 col-lg-12">
         <article>
             <div style="text-align:center"><h4 class="archives-title">Archives</h4></div>
@@ -26,6 +30,37 @@
         <article>
     <div>
 </main>
+
+{{!-- <div class="row page pages">
+    <div class="slidenav">
+        {{> aside}}
+        <div class="closeslide"></div>
+    </div>
+    <main>
+        <nav>
+            <header class="nav-wrapper blue-grey">
+                <div>
+                    <a id="show-slide-nav"><i class="fa fa-bars fa-lg"></i></a>
+                    <p>
+                        <span class="header-title">{{@blog.title}}</span>
+                    </p>
+                    <span></span>
+                </div>
+            </header>
+        </nav>
+        <div class="contents content-in about">
+            {{#post}}
+            <article>
+                <div style="text-align:center"><h4 class="archives-title">Archives</h4></div>
+                <article class="archives"></article>
+            </article>
+            <div class="noborderfooter" style="margin-top:50px;">
+                {{> footer}}
+            </div>
+        </div>
+
+    </main>
+</div> --}}
 
 {{/post}}
 
@@ -48,7 +83,7 @@ jQuery(document).ready(function() {
             var date = time.get('D');
             if (date < 10) date = "0" + date;
             var title = posts[i].title;
-            var url = "https://www.ldsun.com/" + posts[i].slug;
+            var url = "https://www.dpjeep.com/" + posts[i].slug;
             if (i > 0) {
                 var pre_month = moment(posts[i - 1].published_at).utcOffset("-08:00").get('month') + 1;
                 if (month == pre_month) {
